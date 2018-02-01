@@ -15,6 +15,7 @@ import { showModal, hideModal } from '../../actions';
 
 import './Jobs.css';
 
+
 class Jobs extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
@@ -85,12 +86,14 @@ class Jobs extends Component {
   render() {
     const { jobs, status, message } = this.state;
     const { uid } = this.props.auth;
+    const { username } = this.props.auth;
 
     return (
       <div className="full-content">
         <Nav />
         <JobModal />
         <Container className="jobPanel p-3 my-4">
+        <h1 className="text-center p-3" >Hello, {username}!</h1>
           <h1 className="text-center p-3" >Your Dashboard</h1>
           {
             status === 'error' &&
