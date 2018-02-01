@@ -82,6 +82,7 @@ class Auth extends Component {
         this.props.updateAuthState({
           isAuthorised: true,
           uid: res.data.id,
+          username: this.state.username,
         });
         this.props.history.push('/jobs');
       }).catch((err) => {

@@ -106,7 +106,7 @@ class Jobs extends Component {
                   <Row>
                     <Col>
                       <CardTitle>{job.title}</CardTitle>
-                      <CardSubtitle>{job.company}</CardSubtitle>
+                      <CardSubtitle><a href={job.link} target="_blank">{job.company}</a></CardSubtitle>
                     </Col>
                     {
                       job.uid === uid &&
