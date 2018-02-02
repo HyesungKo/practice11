@@ -102,7 +102,7 @@ class JobModal extends React.PureComponent {
           company,
           link,
           salary,
-          notes,
+          notes
         }).then((res) => {
           this.setState({
             status: 'success',
@@ -193,7 +193,7 @@ class JobModal extends React.PureComponent {
             className="my-2"
             type="text"
             name="link"
-            placeholder="Company Link"
+            placeholder="Link"
             value={link}
             valid={link.length !== 0 || !submitted}
             onChange={this.handleInputChange}

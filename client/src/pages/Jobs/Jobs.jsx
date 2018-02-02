@@ -40,6 +40,10 @@ class Jobs extends Component {
     }
   }
 
+  like = (job) => {
+    
+  }
+
   onEdit = (job) => {
     this.props.showModal({ type: 'editJob', job });
   }
@@ -105,11 +109,13 @@ class Jobs extends Component {
                 <CardHeader>
                   <Row>
                     <Col>
-                      <CardTitle>{job.title}</CardTitle>
+                      <CardTitle>{job.title} 
+                      </CardTitle>
                       <CardSubtitle><a href={job.link} target="_blank">{job.company}</a></CardSubtitle>
+                      <CardSubtitle>
+                      
+                      </CardSubtitle>
                     </Col>
-                    {
-                      job.uid === uid &&
                       <Col className="ml-auto">
                         <Row className="h-100 justify-content-end align-items-center">
                           <a href={getCalendarLink(job)} target="_blank">
@@ -121,25 +127,31 @@ class Jobs extends Component {
                             Add to calendar
                           </Button>
                           </a>
-                          <Button
-                            className="mx-2"
-                            color="warning"
-                            onClick={() => this.onEdit(job)}
-                            disabled={status === 'saving'}
-                          >
-                            Edit
-                          </Button>
-                          <Button
-                            className="mx-2"
-                            color="danger"
-                            onClick={() => this.onRemove(job)}
-                            disabled={status === 'saving'}
-                          >
-                            Remove
-                          </Button>
+                          {
+                            job.uid === uid &&
+                            <Button
+                              className="mx-2"
+                              color="warning"
+                              onClick={() => this.onEdit(job)}
+                              disabled={status === 'saving'}
+                            >
+                              Edit
+                            </Button>
+                          }
+                          {
+                            job.uid === uid &&
+                            <Button
+                              className="mx-2"
+                              color="danger"
+                              onClick={() => this.onRemove(job)}
+                              disabled={status === 'saving'}
+                            >
+                              Remove
+                            </Button>
+                          }
                         </Row>
                       </Col>
-                    }
+                    
                   </Row>
                 </CardHeader>
                 <CardBody>
